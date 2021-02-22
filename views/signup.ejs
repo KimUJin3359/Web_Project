@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%- include('./common/bootstrap.ejs') %>
+</head>
+<body>
+    <%- include('./common/header.ejs') %>
+    <!-- action register -->
+    <form action ="/register" method="post" class="w-50 mx-auto">  
+        <div class="mb-3">
+          <label for="text" class="form-label">이름</label>
+          <!-- name으로 넘김 -->
+          <input name="name" type="text" class="form-control" id="text" aria-describedby="emailHelp">
+          <div id="emailHelp" class="form-text">이름을 입력해 주세요.</div>
+        </div>
+        <div class="mb-3">
+          <label for="text" class="form-label">취미</label>
+          <!-- name으로 넘김 -->
+          <input name="hobby" type="text" class="form-control" id="text" aria-describedby="emailHelp">
+          <div id="emailHelp" class="form-text">취미를 입력해 주세요.</div>
+        </div>
+        <div class="mb-3">
+          <label for="text" class="form-label">나이</label>
+          <!-- name으로 넘김 -->
+          <input name="age" type="text" class="form-control" id="text" aria-describedby="emailHelp">
+          <div id="emailHelp" class="form-text">나이를 입력해 주세요.</div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <!-- email로 넘김 -->
+            <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">이메일을 입력해 주세요.</div>
+          </div>
+
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <!-- password로 넘김 -->
+            <input name="password" type="password" class="form-control" id="password">
+            <div id="emailHelp" class="form-text">비밀번호를 입력해 주세요.</div>
+        </div>  
+
+        <button type="submit" class="btn btn-primary">회원가입</button>
+      </form>
+</body>
+</html>

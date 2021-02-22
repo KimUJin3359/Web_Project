@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <%- include('./common/bootstrap.ejs') %>
+</head>
+
+<body>
+  <%- include('./common/header.ejs') %>
+    <div class="w-50 mx-auto">
+      <form action="/post" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">제목</label>
+          <input name="title" type="text" class="form-control" id="exampleFormControlInput1">
+        </div>
+        <div class="mb-3">
+          <label for="formFileMultiple" class="form-label">Multiple files input example</label>
+          <input name="file" class="form-control" type="file" id="formFileMultiple" multiple>
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlTextarea1" class="form-label">내용</label>
+          <textarea name="content" class="form-control" id="exampleFormControlTextarea1" rows="10"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">글 작성하기</button>
+      </form>
+
+    </div>
+</body>
+
+</html>

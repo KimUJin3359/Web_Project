@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <%- include('./common/bootstrap.ejs') %>
+  </head>
+  <body>
+    <%- include('./common/header.ejs') %>
+
+    <% if(locals.user) { %>
+      <a href="/create" class="d-block w-75 mx-auto text-end">
+        <button type="button" class="btn btn-primary text-right">글쓰기</button>
+      </a>
+    <% } %>
+    <table class="table table-striped w-75 mx-auto">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th class="w-50 text-center" scope="col">제목</th>
+          <th scope="col">이름</th>
+          <th scope="col">파일</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if (locals.board && locals.board.length) { %>
+          <% locals.board.map(li => { %>
+            <tr>
+              <th scope="row"><%=li.id%></th>
+              <td class="text-center"><%=li.title%></td>
+              <td><%=li.user.name%></td>
+              <th scope="col">
+                <a href="/download/<%=li.files[0] && li.files[0].id %>"><%=li.files[0] && li.files[0].originalname%></a>
+              </th>
+            </tr>
+          <% }) %>
+        <% } else { %>
+          <% console.log("false") %>
+        <% } %>
+      </tbody>
+    </table>
+  </body>
+</html>

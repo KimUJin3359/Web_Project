@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 회원가입 -->
+    <% if (type === "register") { %>
+        <% if (result) { %>
+            <script>
+                alert('회원가입에 성공하였습니다.');
+                location.href = "/login";
+            </script>
+        <% } else { %>
+            <script>
+                alert('회원가입에 실패하였습니다.');
+                location.href = "/signup"
+            </script>
+        <% } } %>
+
+    <!-- 로그인 -->
+    <% if (type === "login") { %>
+        <% if (result) { %>
+            <script>
+                alert('로그인에 성공하였습니다.');
+                location.href = "/board";
+            </script>
+        <% } else { %>
+            <script>
+                alert('로그인에 실패하였습니다.');
+                location.href = "/login"
+            </script>
+        <% } } %>
+
+    <!-- 게시판 -->
+    <% if (type === "post") { %>
+        <% if (result) { %>
+        <script>
+            alert('게시글 작성에 성공하였습니다.');
+            location.href = "/board";
+        </script>
+    <% } else { %>
+        <script>
+            alert('게시글 작성에 실패하였습니다.');
+            location.href = "/create";
+        </script>
+    <% } } %>
+</body>
+</html>
